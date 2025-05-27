@@ -1,0 +1,186 @@
+body{
+    font-family: "Josefin Sans", sans-serif;
+}
+
+.size-button {
+  background-color: #fff; /* Default background color */
+  color: #000; /* Default text color */
+}
+.size-button.selected {
+  background-color: #000; /* Selected background color */
+  color: #fff; /* Selected text color */
+}
+.buy{
+
+  position:absolute;
+  top: 60%;
+right: 20%;
+}
+.prodtitle{
+    
+
+    margin-right: 70px;
+    font-size: 240%;
+    
+    
+  }
+  .prodtitles{
+    right:0;
+    position: absolute;
+    justify-content: center;
+   float:none;
+    size: 50%;
+    width: 800px;
+    height: 700px;
+  }
+
+  .pb{
+    width: 57px;
+    height: 57px;
+    cursor: pointer;
+    background-color: transparent;
+    border: 2px black solid;
+    color: black;
+    font-size: 30px;
+    
+  }
+
+  .prodcolor{
+    font-style: italic;
+    font-size: 140%;
+    color: #535353;
+    
+  }
+
+  .prodrating{
+    align-items:center;
+    width: 220px;
+    height: 130px;
+    justify-content:flex-start;
+    margin-left: 8px;
+    
+  }
+
+  .prodratingtext{
+    margin: 0%;
+   position: absolute;
+   margin-top: 58px;
+    font-size: 20px;
+    margin-right: 60px;
+  
+
+  }
+
+  .prodprice{
+    font-size: 60px;
+    font-style:oblique;
+    font-weight: bold;
+  }
+
+  .discprice{
+    font-size: 35px;
+    font-weight:430;
+    color: #3f3f3f;
+  }
+  .produsize{
+    font-size: 24px;
+  }
+  .prodsizenearbutton{
+    font-size: 19px;
+  }
+  .prodbuttons{
+float: left;
+
+  }
+
+  .prodbuybutton{
+    font-size: 34px;
+    font-weight: bold;
+    font-family:Tahoma;
+    
+    width: 250px;
+    height: 59px;
+    cursor:pointer;
+    background-color: #000000;
+    box-shadow:10px #535353;
+    border-color: grey;
+    border:3px;
+    border-radius: 7px;
+    color: whitesmoke;
+  }
+
+  .active {
+    background-color: black;
+    color: white;
+}
+
+  .prodaddtocart{
+    font-size: 24px;
+    font-weight: bold;
+    font-family:Tahoma;
+    width: 200px;
+    height: 49px;
+    cursor: pointer;
+    background-color: #ffffff;
+    border:3px;
+    border-radius: 7px;
+    color: rgb(255, 92, 5);
+  }
+
+
+
+  .carousel-container {
+    position: relative;
+  }
+  
+  .carousel {
+    display: flex;
+    overflow: hidden;
+    
+   
+  }
+  
+  .slide {
+    flex: 1 0 100%;
+    display: flex;
+    height: fit-content;
+  }
+  
+  .slide img {
+    width: 650px;
+    height: 650px; 
+    
+    margin-left: 47px;
+  }
+  
+  .prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #ddd;
+  border: none;
+  color: #000000;
+  padding: 10px;
+  cursor: pointer;
+
+}
+
+.prev {
+  left: 0;
+  font-size: 60px;
+  background-color: transparent;
+}
+.next {
+  left: 44%;
+  font-size: 60px;
+  background-color: transparent;
+}
+
+.backbutton{
+ position: relative;
+  height: 60px;
+  width: 60px;
+  top: 20%;
+}
+
