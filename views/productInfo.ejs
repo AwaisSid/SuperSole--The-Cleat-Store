@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUPERSOLE PRODUCTS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/productstyle.css">
+    <style>
+      .footer{
+      background-color: #000000;
+      display: flex;
+    }
+    .footerlist {
+      margin-top: 10px;
+      display: flex; /* Use flexbox for layout */
+      justify-content: center; /* Align items horizontally */
+      align-items: center; /* Align items vertically */
+      font-size: 110%;
+    }
+    
+    .brands, .links {
+      flex: 1; /* Equal width for both lists */
+      list-style-type: none; /* Remove default list style */
+      padding: 0; /* Remove default padding */
+      margin: 0; /* Remove default margin */
+    }
+    .links{
+      margin-left: 15px;
+    }
+    .vertical-line {
+      
+      margin: 0 20px; /* Adjust spacing between the lists */
+      border: none;
+      border-left: 1px solid white; /* Vertical line style */
+      height: 220px; /* Adjust the height of the line */
+    }
+    .divfsocials11{
+           margin-left: 80px ;
+           margin-top: -78px;
+           position: relative;
+    }
+.wspace{
+  margin-left: 190px;
+}
+.rights{
+  position: absolute;
+  left: 60%;
+  
+  
+}
+    .fsocials1{
+      height: 30px;
+      width: 30px;
+      position: absolute;
+      left: 48%;
+      
+    }
+    .fsocials2{
+      height: 30px;
+      width: 30px;
+      position: absolute;
+      left: -8%;
+      
+    }
+    
+    .about{
+      color: white;
+     
+      
+    }
+    </style>
+
+</head>
+
+<body>
+
+
+    
+    <div class="prodtitles">
+       
+        <h1 class="prodtitle"><%=result[0].pname%></h1>
+        <p class="prodcolor"><%=result[0].pcolor%></p>
+
+            <h5 class="prodratingtext"><%=result[0].prating%></h5>
+          <img src="/images/<%=result[0].pratingimg%>" alt="" class="prodrating" >
+            
+      <br><br>
+      <h1><%=result[0].brand%></h1>
+    
+      <span class="prodprice">&#8377; <%=result[0].price%></span> &nbsp;&nbsp;<span class="discprice">
+        <s><%=result[0].ogprice%></s></span>
+        <br><hr>   </div>
+       
+   
+  
+        <a href="/product"><img src="../images/backbutton.png" alt="" class="backbutton"></a>
+        
+    
+
+        
+    <div class="carousel-container">
+        <div class="carousel">
+          <div class="slide">
+            <img src="/images/<%=result[0].pimage1%>" >
+            
+          </div>
+          <div class="slide">
+            <img src="/images/<%=result[0].pimage2%>"  class="nike38prod">
+            
+          </div>
+          <div class="slide">
+            <img src="/images/<%=result[0].pimage3%>"  class="nike38prod">
+            
+          </div>
+        
+        </div>
+          
+        </div>
+        
+        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="next" onclick="moveSlide(1)">&#10095;</button>
+    
+    
+      <div class="buy">
+        <p class="produsize"><u>Your Size ?</u></p>
+           
+           
+          <div class="prodbuttons">
+           <p class="prodsizenearbutton">Sizes:</p>
+         <!-- <% for (let size of ['6', '7', '8', '9', '10', '11']) { %>
+        <button class="pb" onclick="selectSize('<%= size %>')"><%= size %></button>
+           <% } %> -->
+           <button class="pb" id="6" onclick="changeColor(this)">6</button>
+          <button id="7" class="pb" onclick="changeColor(this)">7</button>
+          <button id="8" class="pb" onclick="changeColor(this)">8</button>
+          <button id="9" class="pb" onclick="changeColor(this)">9</button>
+          <button id="10"class="pb" onclick="changeColor(this)">10</button>
+          <button id="11" class="pb" onclick="changeColor(this)">11</button>
+          
+       </div>
+       <br><br><br><br><br><br><br><br><br>
+       <!-- <a href="/cart/<%= result[0].pid %>"><button class="prodbuybutton">BUY NOW</button></a>&nbsp;&nbsp;
+       <button class="prodaddtocart" onclick="addToCart()">Add to Cart</button> -->
+       <a href="/cart/<%= result[0].pid %>"><button class="prodbuybutton">BUY NOW</button></a>&nbsp;&nbsp;
+       <button class="prodaddtocart"><a href="addtocart/<%= result[0].pid %>">Add to Cart</a></button>
+       
+      </div>
+
+      <br>
+      <br>
+      <br><br><br>
+      
+      <footer class="footer">
+        
+        <p class="about">ABOUT US!<br><br>"Welcome to the ultimate destination for elite football. 
+             Elevate your game <br>with our premium selection from Nike, Adidas, Puma, and Mizuno. 
+              Whether<br> you're aiming for precision, speed, or control, our curated collection ensures<br> you step onto the field with confidence and style.
+            Dominate the pitch and <br>ignite your fame with the best in football footwear."</p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <div class="footerlist">
+              <ul class="brands" style="color: white; list-style-type: disc;">
+                <a style="text-decoration:none; color: white;"  href="/Nike"> <li>Nike</li></a><br>&nbsp;
+                <a style="text-decoration:none; color: white;"  href="/Adidas"> <li>Adidas</li></a><br>&nbsp;
+                <a style="text-decoration:none; color: white;"  href="/Puma"> <li>Puma</li></a><br>&nbsp;
+                  <a style="text-decoration:none; color: white;"  href="/Mizuno"><li>Mizuno</li></a>
+    
+              </ul>
+              <hr class="vertical-line">
+              <ul class="links" style="color: white; list-style-type: disc;">
+                <a style="text-decoration:none; color: white;"  href="/"><li>Home</li></a> <br>&nbsp;
+              <a style="text-decoration:none; color: white;"  href="/product"><li>Products</li></a><br>&nbsp;
+              <a style="text-decoration:none; color: white;"  href="/aboutus"><li>About</li></a><br>&nbsp;
+              <a style="text-decoration:none; color: white;"  href="/contactus"> <li>ContactUs</li></a>
+              </ul>
+               <div class="divfsocials11">
+                
+                      <p style="color: white; margin-top: -1ppx;"><b><u style="color: white;"><img src="../images/pneeeeeintsa.png" alt="" class="fsocials2">Instagram:</u></b> <a style="text-decoration:none; color: white;" href="https://www.instagram.com/awais___siddiqui/?next=%2F#">SuperSole.com</a>
+                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <img src="../images/—Pngtree—whatsapp mobile software icon_8704828.png" alt="" class="fsocials1"><u>Whatsapp:</u></b>+91 73506 57867</p></div>
+                        
+                      <br>
+                      <br>
+                      <br><br><br>
+                      <div class="rights">
+                      <p style="color: rgba(102, 101, 101, 0.786); font-size: 24; font-style: italic;"><br><br><br><br><b>SUPERSOLE</b> All rights reserved &#169;</p></div>
+            
+            
+           
+        </footer>
+        
+    </body>
+    <script>
+        let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    
+    function showSlide(n) {
+      slides.forEach(slide => slide.style.display = 'none');
+      slides[currentSlide].style.display = 'flex';
+    }
+    
+    function moveSlide(n) {
+      currentSlide = (currentSlide + n + slides.length) % slides.length;
+      showSlide(currentSlide);
+    }
+    
+    showSlide(currentSlide);
+
+
+//     // buttons
+//     let activeButton = null;
+
+// function changeColor(button) {
+//     if (activeButton !== null) {
+//         activeButton.classList.remove('active');
+//     }
+//     button.classList.add('active');
+//     activeButton = button;
+// }
+
+    </script> 
+    </html>

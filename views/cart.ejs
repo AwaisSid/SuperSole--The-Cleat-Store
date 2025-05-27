@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+</head>
+<body>
+    <h1>Your Cart</h1>
+    <% if (cart) { %>
+        <table>
+            <tr>
+                <th>Product Name</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Total</th>
+            </tr>
+            <% cart.items.forEach(item => { %>
+                <tr>
+                    <td><%= item.pname %></td>
+                    <td><%= item.quantity %></td>
+                    <td>$<%= item.price %></td>
+                    <td>$<%= item.quantity * item.price %></td>
+                </tr>
+            <% }); %>
+        </table>
+        <form action="/removefromcart" method="post">
+            <label for="pid">Enter Product ID to Remove:</label>
+            <input type="text" id="pid" name="pid" required>
+            <button type="submit">Remove from Cart</button>
+        </form>
+    <% } else { %>
+        <p>Your cart is empty.</p>
+    <% } %>
+    <a href="/">Continue Shopping</a>
+</body>
+</html>

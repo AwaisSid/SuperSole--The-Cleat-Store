@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Product</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-top: 20px;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="submit"],
+        .logout-btn {
+            width: calc(100% - 24px);
+            padding: 14px;
+            margin: 10px 0;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        .back-btn{
+            position: absolute;
+            left: 1%;
+            top:0%;
+            padding: 14px;
+            margin: 10px 0;
+            box-sizing: border-box;
+            border: 1px solid #212121;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            color: black;
+        }
+
+        input[type="submit"]:hover,
+        .logout-btn:hover,.back-btn:hover {
+            background-color: #0056b3;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <h2>Delete Product</h2>
+    <a href="/admin/dashboard" style="text-decoration:none;" class="back-btn">Back to Dashboard</a>
+    <form action="/admin/deleteproductbyid" method="post">
+        <label for="pid"><b>Product ID:</b></label>
+        <input type="number" id="pid" name="pid" required>
+        <input type="submit" value="Delete by PID">
+    </form>
+    <br>
+    <form action="/admin/deleteproductbyname" method="post">
+        <label for="pname"><b>Product Name:</b></label>
+        <input type="text" id="pname" name="pname" required>
+        <input type="submit" value="Delete by Name">
+    </form>
+    <br><br>
+    <form action="/admin/logout" method="post">
+        <input type="submit" value="Logout" class="logout-btn">
+    </form>
+</body>
+</html>

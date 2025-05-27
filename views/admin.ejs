@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: black; /* Changed background color to black */
+            margin: 0;
+            padding: 0;
+            color: white; /* Changed text color to white */
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 40px;
+            border-bottom: 2px solid #ddd; /* Changed border color to gray */
+        }
+
+        .username {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .buttons-container {
+            display: flex;
+            align-items: center; 
+        }
+
+        .button {
+            padding: 14px 28px; 
+            margin-left: 20px; 
+            border: none;
+            border-radius: 8px; 
+            background-color: #007bff;
+            color: #fff;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="username">
+            Welcome, Admin!
+        </div>
+        <div class="buttons-container">
+            <form action="/admin/dashboard/addproducts" method="get">
+                <button type="submit" class="button">Add Product</button>
+            </form>
+            <form action="/admin/dashboard/deleteproducts" method="get">
+                <button type="submit" class="button">Delete Product</button>
+            </form>
+            <form action="/admin/logout" method="post">
+                <button type="submit" class="button">Logout</button>
+            </form>
+        </div>
+    </div>
+    <h2>ALL PRODUCTS LIST</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Product ID</th>
+                <th>Product Name</th>
+                <th>Brand</th>
+                <th>Price</th>
+                <th>Original Price</th>
+                <th>Product Image 1</th>
+                <th>Product Image 2</th>
+                <th>Product Image 3</th>
+                <th>Product Color</th>
+                <th>Rating</th>
+                <th>Rating Image</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <% products.forEach(product => { %>
+                <tr>
+                    <td><%= product.pid %></td>
+                    <td><%= product.pname %></td>
+                    <td><%= product.brand %></td>
+                    <td><%= product.price %></td>
+                    <td><%= product.ogprice %></td>
+                    <td><%= product.pimage1 %></td>
+                    <td><%= product.pimage2 %></td>
+                    <td><%= product.pimage3 %></td>
+                    <td><%= product.pcolor %></td>
+                    <td><%= product.prating %></td>
+                    <td><%= product.pratingimg %></td>
+                    
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+</body>
+</html>

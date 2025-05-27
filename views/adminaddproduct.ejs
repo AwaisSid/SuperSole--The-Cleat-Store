@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Product</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-top: 20px;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="submit"],
+        input[type="file"],
+        .logout-btn {
+            width: calc(100% - 24px);
+            padding: 14px;
+            margin: 10px 0;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover,
+        .logout-btn:hover {
+            background-color: #0056b3;
+            color: #fff;
+        }
+
+        .image-preview {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .image-preview img {
+            max-width: 100px;
+            max-height: 100px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Add Product</h2>
+    <form action="/admin/addproducts" method="post" enctype="multipart/form-data">
+
+        <!-- <label for="pid"><b>Product ID:</b></label>
+        <input type="number" id="pid" name="pid" required> -->
+
+        <label for="pname"><b>Product Name:</b></label>
+        <input type="text" id="pname" name="pname" required>
+
+        <label for="brand"><b>Brand:</b></label>
+        <input type="text" id="brand" name="brand" required>
+
+        <label for="price"><b>Price:</b></label>
+        <input type="number" id="price" name="price" required>
+
+        <label for="ogprice"><b>Original Price:</b></label>
+        <input type="number" id="ogprice" name="ogprice" required>
+
+        <label for="pimage1"><b>Image 1:</b></label>
+        <div class="image-preview">
+            <img id="image-preview-1" src="#" alt="Image Preview">
+            <input type="file" id="pimage1" name="pimage1" accept="image/*" onchange="previewImage(1)" required>
+        </div>
+
+        <label for="pimage2"><b>Image 2:</b></label>
+        <div class="image-preview">
+            <img id="image-preview-2" src="#" alt="Image Preview">
+            <input type="file" id="pimage2" name="pimage2" accept="image/*" onchange="previewImage(2)" required>
+        </div>
+
+        <label for="pimage3"><b>Image 3:</b></label>
+        <div class="image-preview">
+            <img id="image-preview-3" src="#" alt="Image Preview">
+            <input type="file" id="pimage3" name="pimage3" accept="image/*" onchange="previewImage(3)" required>
+        </div>
+
+        <label for="pcolor"><b>Color:</b></label>
+        <input type="text" id="pcolor" name="pcolor" required>
+        
+        <label for="prating"><b>Rating:</b></label>
+        <input type="number" id="prating" name="prating" required>
+        
+        <!-- <label for="pratingimg"><b>Rating Image: preferred (4 star, 5 star)</b></label>
+        <input type="file" id="pratingimg" name="pratingimg" accept="image/*" onchange="previewImage(4)" required> -->
+        
+
+        <input type="submit" value="addproduct">
+    </form>
+    <br><br>
+    <form action="/admin/logout" method="post">
+        <input type="submit" value="Logout" class="logout-btn">
+    </form>
+
+    <script>
+        function previewImage(imageNumber) {
+            const fileInput = document.getElementById(`pimage${imageNumber}`);
+            const preview = document.getElementById(`image-preview-${imageNumber}`);
+            const file = fileInput.files[0];
+            const reader = new FileReader();
+
+            reader.onloadend = function () {
+                preview.src = reader.result;
+            }
+
+            if (file) {
+                reader.readAsDataURL(file);
+            } else {
+                preview.src = "";
+            }
+        }
+    </script>
+</body>
+</html>

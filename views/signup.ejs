@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Supersole SignUp </title>
+  <link rel="stylesheet" href="styles.css"> 
+  <style>
+    body{
+      background-color: #f0f0f0;
+  background-image: url(https://i.pinimg.com/564x/c4/83/ba/c483baa417c636162cdc5f5ee8255a6b.jpg);
+
+ background-size:cover;
+ background-position: center;
+    }
+ 
+.signup-container {
+  margin-top: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+ 
+}
+
+
+.signup-box {
+  background-color: #fff;
+  width: 400px;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.signup-header h2 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.signup-header p {
+  margin-bottom: 30px;
+  color: #666;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  text-align: left;
+  margin-bottom: 5px;
+  color: #666;
+}
+
+.input-group input,
+.input-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  width: 105%;
+  padding: 10px;
+  background-color: #1d1d1d;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+.mainlogoform1{
+  height: 200ppx;
+top:20px;
+left: 580px;
+  width: 450px;
+  position: absolute;
+}
+
+  </style>
+</head>
+<body>
+    <img src="/images/mainlogo (1).jpg" alt=""  class="mainlogoform1">
+  <div class="signup-container">
+    <div class="signup-box">
+      <div class="signup-header">
+        <h2>Create an Account</h2>
+        <p>Please fill in your details</p>
+      </div>
+      <form id="signupForm" action="/signup" method="post">
+        <div class="input-group">
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" required>
+        </div>
+        <div class="input-group">
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required>
+        </div>
+        <div class="input-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="input-group">
+          <label for="address">Address:</label>
+          <textarea id="address" name="address" placeholder="Relevant for further Buying options" required></textarea>
+        </div>
+        <button type="submit">Sign Up</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
